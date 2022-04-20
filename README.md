@@ -1,5 +1,5 @@
 # SpotifyClone-Django
-Made using Django, this was made for the groups final project in Database Systems.
+Made using Django, this was made for the group's final project in Database Systems.
 
 ## Selfhosting the website
 - clone the repo
