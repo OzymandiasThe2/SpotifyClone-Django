@@ -1,5 +1,5 @@
 # SpotifyClone-Django
-Made using Django, this was made for the groups final project in Database Systems.
+Made using Django, this was made for the group's final project in Database Systems.
 
 ## Selfhosting the website
 - clone the repo
@@ -11,3 +11,10 @@ Make sure you have proper django version, the porject uses Django 4.0.4
 If you made any changes to the models then you'll have to make migrations in order to update the db
   - ```./manage.py makemigrations```
   - ```./manage.py migrate```
+
+
+# License and Uses
+
+All code invovled with project are created by: Shriji Shah, Ryan Manzie, Noah Morin, Blake Whiting
+
+As this was made for a academic project, you cannot copy or plagiarize the code/images used.
