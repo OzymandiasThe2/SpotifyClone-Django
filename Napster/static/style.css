@@ -3,14 +3,23 @@
 }
 html {
     /*background: #ffffff;*/
-    background-image:url(https://picsum.photos/2000/?random=1); width: 100% ;background-size: auto; background-repeat: no-repeat
-
-
+    /*background-image:url(https://picsum.photos/2000/?random=1); width: 100% ;background-size: auto; background-repeat: no-repeat*/
+}
+.img-round img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 body {
     margin: 0;
     font-family: "Raleway",sans-serif;
-    background-image:url(https://picsum.photos/2000/?random=1); width: 100% ;background-size: auto; background-repeat: no-repeat
+    object-fit: contain;
+    background-image:url(https://picsum.photos/2000/?grayscale);
+    width: 100%;
+    background-repeat: no-repeat;
 }
 h1 {
     margin: 0;
@@ -22,7 +31,7 @@ h3 {
     margin: 0;
     font-size: 35px;
     font-weight: 500;
-    color: #ccc;
+    color: palevioletred;
 }
 h2 {
     margin: 0;
@@ -251,4 +260,15 @@ h2 {
 .header-right {
     float: left;
     margin-top: 10px;
+}
+
+.img-rounded {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }

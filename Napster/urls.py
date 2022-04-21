@@ -13,6 +13,7 @@ urlpatterns = [
     # path("register/", UserRegiForm.as_view(), name="register"),
     # path("view/", views.view, name="view"),
     # path(r'^songs/(?P<filter_by>[a-zA_Z]+)/$', views.songs, name='songs'),
+    path("profile/", views.profile, name="profile"),
     re_path(r'^$', views.index, name='index'),
     re_path(r'^register/$', views.register, name='register'),
     re_path(r'^login_user/$', views.login_user, name='login_user'),

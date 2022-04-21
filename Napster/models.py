@@ -22,3 +22,11 @@ class Song(models.Model):
 
     def __str__(self):
         return self.song_title
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='profile_pic', blank=True, default='profile_pic/default.jpg')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'

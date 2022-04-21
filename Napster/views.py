@@ -1,13 +1,34 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
-from .form import AlbumForm, SongForm, UserForm
+from .form import AlbumForm, SongForm, UserForm, UpdateUserForm, ProfileForm
 from .models import Album, Song
 
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
+
+
+def profile(request):
+    if not request.user.is_authenticated:
+        return render(request, 'login.html')
+    if request.method == 'POST':
+        update_form = UpdateUserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+
+        if update_form.is_valid() and profile_form.is_valid():
+            update_form.save()
+            profile_form.save()
+            return redirect('/profile')
+    else:
+        update_form = UpdateUserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    context = {
+        'update_form': update_form,
+        'profile_form': profile_form,
+    }
+    return render(request, 'profile.html', context)
 
 
 def create_album(request):

@@ -7,10 +7,14 @@
     <!-- Albums -->
     <div class="row">
         <div class="col-sm-12">
-            <h3>{{ user.username }}'s Albums
-                <img src="https://i.imgur.com/Jo7H6th.png" alt="Napster_logo" style="width: 10%; height: 2%"/>
+            <h3 class="fa-border center" style="text-align: center; box-sizing: border-box; width: 55%; border: solid #5B6DCD 10px; padding: 5px;">
+                {{ user.username }}'s Albums
+                {% if user.profile.image %}
+                    <img  src="{{ user.profile.image.url }}" alt="{{ user.username }}'s profile picture not loading" style="max-height: 400px; max-width: 400px"/>
+                {% else %}
+                    <img  src=https://i.imgur.com/Vfvz1AL.png  alt="default profile picture" style="object-fit: contain;"/>
+                {% endif %}
             </h3>
-
         </div>
         {% if albums %}
             {% for album in albums %}
@@ -24,7 +28,7 @@
                             <h4>{{ album.artist }}</h4>
 
                             <!-- View Details -->
-                            <a href="{% url 'Napster:detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                            <a href="{% url 'Napster:detail' album.id %}" class="btn btn-primary btn-sm" role="button">Album Information</a>
 
                             <!-- Delete Album -->
                             <form action="{% url 'Napster:delete_album' album.id %}" method="post" style="display: inline;">

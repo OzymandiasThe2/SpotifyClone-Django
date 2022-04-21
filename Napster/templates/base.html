@@ -16,7 +16,7 @@
     <script src="{% static 'javascript/main.js' %}"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse" style="background: #d6cbd3">
+<nav class="navbar navbar-inverse" style="background: #d6cbd3; width: 100%">
     <div class="container-fluid">
 
         <!-- Header -->
@@ -61,6 +61,11 @@
                 <li>
                     <a href="{% url 'Napster:create_album' %}">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Napster:profile' %}">
+                        <span class="fa-solid fa-user" aria-hidden="true"></span> Profile
                     </a>
                 </li>
                 <li>
