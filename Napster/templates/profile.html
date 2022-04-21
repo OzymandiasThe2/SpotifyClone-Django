@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="media">
+            <h3 class="media-heading" >
+                {{ user.username }}'s Profile Page <br>
+                Email: {{ user.email }}
+            </h3>
+        </div>
+        <div class="img-round">
+            {% if user.profile.image %}
+                <img  src="{{ user.profile.image.url }}" alt="{{ user.username }}'s profile picture not loading" style="object-fit: cover;width: 150px; height: 150px;border-radius: 50%;background-repeat: no-repeat;background-position: center center;background-size: cover;"/>
+            {% else %}
+                <img  src=https://i.imgur.com/Vfvz1AL.png  alt="default profile picture" style="width: 300px; height: 300px;border-radius: 50%;"/>
+            {% endif %}
+        </div>
+            <div class="center" style="background-color: white;border-radius: 10px;padding: 20px;width: 80%; translate: 0 50px">
+                <div class="panel-body">
+                    <h3 style="font-size: 40px">Account Manager</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class=fa-border>Change Account Details</legend>
+                        {{ profile_form | crispy }}
+                        {{ update_form | crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update Info</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
