@@ -15,6 +15,7 @@ If you made any changes to the models then you'll have to make migrations in ord
 
 # License and Uses
 
-All code invovled with project are created by: Shriji Shah, Ryan Manzie, Noah Morin, Blake Whiting
+All code invovled with project are created by: Shriji Shah
+Reviewed by project partners: Ryan Manzie, Noah Morin, Blake Whiting
 
 As this was made for a academic project, you cannot copy or plagiarize the code/images used.
